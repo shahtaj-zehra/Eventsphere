@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Gallery - EventSphere</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-calendar-alt me-2"></i>EventSphere
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="media.html">Media</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Feedback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">
+                            <i class="fas fa-sign-in-alt me-1"></i>Login/Register
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header bg-gradient-primary text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="display-4 fw-bold mb-3">Media Gallery</h1>
+                    <p class="lead">Explore photos, videos, and memories from our amazing events</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section py-4 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="filter-section">
+                        <div class="row g-3">
+                            <div class="col-lg-3 col-md-6">
+                                <label for="searchMedia" class="form-label">Search Media</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                                    <input type="text" class="form-control" id="searchMedia" placeholder="Search by event, description...">
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-6">
+                                <label for="mediaTypeFilter" class="form-label">Media Type</label>
+                                <select class="form-select" id="mediaTypeFilter">
+                                    <option value="all">All Types</option>
+                                    <option value="image">Images</option>
+                                    <option value="video">Videos</option>
+                                    <option value="document">Documents</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-2 col-md-6">
+                                <label for="eventFilter" class="form-label">Event</label>
+                                <select class="form-select" id="eventFilter">
+                                    <option value="all">All Events</option>
+                                    <option value="Tech Conference 2024">Tech Conference 2024</option>
+                                    <option value="Career Development Workshop">Career Development Workshop</option>
+                                    <option value="Cultural Festival">Cultural Festival</option>
+                                    <option value="Research Symposium">Research Symposium</option>
+                                    <option value="Sports Tournament">Sports Tournament</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-2 col-md-6">
+                                <label for="yearFilter" class="form-label">Year</label>
+                                <select class="form-select" id="yearFilter">
+                                    <option value="all">All Years</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2022">2022</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-2 col-md-6">
+                                <label for="sortMedia" class="form-label">Sort By</label>
+                                <select class="form-select" id="sortMedia">
+                                    <option value="newest">Newest First</option>
+                                    <option value="oldest">Oldest First</option>
+                                    <option value="popular">Most Popular</option>
+                                    <option value="name">Name A-Z</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-1 col-md-6 d-flex align-items-end">
+                                <button class="btn btn-primary w-100" onclick="filterMedia()">
+                                    <i class="fas fa-filter"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Gallery -->
+    <section class="media-gallery py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2 class="mb-0">Gallery</h2>
+                        <div class="view-toggle">
+                            <div class="btn-group" role="group">
+                                <input type="radio" class="btn-check" name="viewMode" id="gridView" autocomplete="off" checked>
+                                <label class="btn btn-outline-primary" for="gridView">
+                                    <i class="fas fa-th"></i> Grid
+                                </label>
+                                <input type="radio" class="btn-check" name="viewMode" id="listView" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="listView">
+                                    <i class="fas fa-list"></i> List
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Media Grid -->
+            <div class="media-grid" id="mediaGrid">
+                <!-- Media items will be loaded here by JavaScript -->
+            </div>
+
+            <!-- Load More Button -->
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <button class="btn btn-outline-primary btn-lg" onclick="loadMoreMedia()">
+                        <i class="fas fa-plus me-2"></i>Load More Media
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Events Media -->
+    <section class="featured-media py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-center mb-5">Featured Event Highlights</h2>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card featured-media-card h-100">
+                        <div class="card-img-top bg-primary text-white p-4 text-center" style="height: 200px;">
+                            <i class="fas fa-play-circle fa-4x mb-3"></i>
+                            <h5>Tech Conference 2024 Highlights</h5>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title">Keynote Presentations & Panel Discussions</h6>
+                            <p class="card-text text-muted">Watch the highlights from our biggest technology conference featuring industry leaders and innovative solutions.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="media-stats">
+                                    <small class="text-muted">
+                                        <i class="fas fa-images me-1"></i>45 Photos
+                                        <i class="fas fa-video ms-3 me-1"></i>12 Videos
+                                    </small>
+                                </div>
+                                <button class="btn btn-primary btn-sm" onclick="viewEventMedia('Tech Conference 2024')">
+                                    <i class="fas fa-eye me-1"></i>View All
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card featured-media-card h-100">
+                        <div class="card-img-top bg-success text-white p-4 text-center" style="height: 200px;">
+                            <i class="fas fa-users fa-4x mb-3"></i>
+                            <h5>Cultural Festival 2024</h5>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title">Dance Performances & Cultural Showcase</h6>
+                            <p class="text-muted">Experience the vibrant cultural performances and celebrations from around the world.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="media-stats">
+                                    <small class="text-muted">
+                                        <i class="fas fa-images me-1"></i>78 Photos
+                                        <i class="fas fa-video ms-3 me-1"></i>8 Videos
+                                    </small>
+                                </div>
+                                <button class="btn btn-success btn-sm" onclick="viewEventMedia('Cultural Festival')">
+                                    <i class="fas fa-eye me-1"></i>View All
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Statistics -->
+    <section class="media-stats py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stats-card">
+                        <i class="fas fa-images"></i>
+                        <h3 id="totalImages">1,234</h3>
+                        <p>Total Images</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stats-card">
+                        <i class="fas fa-video"></i>
+                        <h3 id="totalVideos">156</h3>
+                        <p>Total Videos</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stats-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3 id="totalEvents">45</h3>
+                        <p>Events Covered</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stats-card">
+                        <i class="fas fa-download"></i>
+                        <h3 id="totalDownloads">2,890</h3>
+                        <p>Downloads</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Categories -->
+    <section class="media-categories py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-center mb-5">Browse by Category</h2>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="category-card text-center p-4 bg-white rounded shadow-sm">
+                        <i class="fas fa-laptop-code fa-3x text-primary mb-3"></i>
+                        <h6>Technology</h6>
+                        <small class="text-muted">234 Items</small>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="category-card text-center p-4 bg-white rounded shadow-sm">
+                        <i class="fas fa-graduation-cap fa-3x text-success mb-3"></i>
+                        <h6>Workshops</h6>
+                        <small class="text-muted">189 Items</small>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="category-card text-center p-4 bg-white rounded shadow-sm">
+                        <i class="fas fa-users fa-3x text-info mb-3"></i>
+                        <h6>Cultural</h6>
+                        <small class="text-muted">312 Items</small>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="category-card text-center p-4 bg-white rounded shadow-sm">
+                        <i class="fas fa-microscope fa-3x text-warning mb-3"></i>
+                        <h6>Research</h6>
+                        <small class="text-muted">156 Items</small>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="category-card text-center p-4 bg-white rounded shadow-sm">
+                        <i class="fas fa-trophy fa-3x text-danger mb-3"></i>
+                        <h6>Sports</h6>
+                        <small class="text-muted">278 Items</small>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="category-card text-center p-4 bg-white rounded shadow-sm">
+                        <i class="fas fa-book fa-3x text-secondary mb-3"></i>
+                        <h6>Academic</h6>
+                        <small class="text-muted">145 Items</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-calendar-alt me-2"></i>EventSphere</h5>
+                    <p class="text-muted">Connecting communities through meaningful events and experiences.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="events.html" class="text-muted text-decoration-none">Events</a></li>
+                        <li><a href="media.html" class="text-muted text-decoration-none">Media</a></li>
+                        <li><a href="feedback.html" class="text-muted text-decoration-none">Feedback</a></li>
+                        <li><a href="about.html" class="text-muted text-decoration-none">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                        <li><a href="faq.html" class="text-muted text-decoration-none">FAQ</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Help</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h6>Newsletter</h6>
+                    <p class="text-muted">Subscribe to get updates about upcoming events.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-muted">&copy; 2024 EventSphere. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0 text-muted">Made with <i class="fas fa-heart text-danger"></i> for the community</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Media Modal -->
+    <div class="modal fade" id="mediaModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mediaModalTitle">Media Preview</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div id="mediaModalContent">
+                        <!-- Media content will be loaded here -->
+                    </div>
+                    <div class="mt-3">
+                        <button class="btn btn-primary me-2" onclick="downloadMedia()">
+                            <i class="fas fa-download me-1"></i>Download
+                        </button>
+                        <button class="btn btn-outline-secondary me-2" onclick="shareMedia()">
+                            <i class="fas fa-share-alt me-1"></i>Share
+                        </button>
+                        <button class="btn btn-outline-danger" onclick="favoriteMedia()">
+                            <i class="fas fa-heart me-1"></i>Favorite
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Sample media data
+        const mediaItems = [
+            {
+                id: 1,
+                title: "Tech Conference Opening",
+                type: "image",
+                event: "Tech Conference 2024",
+                date: "2024-03-15",
+                category: "Technology",
+                description: "Opening ceremony of the Tech Conference 2024",
+                thumbnail: "fas fa-image",
+                likes: 45,
+                downloads: 23
+            },
+            {
+                id: 2,
+                title: "Keynote Presentation",
+                type: "video",
+                event: "Tech Conference 2024",
+                date: "2024-03-15",
+                category: "Technology",
+                description: "Keynote presentation by industry leaders",
+                thumbnail: "fas fa-video",
+                likes: 67,
+                downloads: 34
+            },
+            {
+                id: 3,
+                title: "Cultural Dance Performance",
+                type: "image",
+                event: "Cultural Festival",
+                date: "2024-03-25",
+                category: "Cultural",
+                description: "Traditional dance performance from different cultures",
+                thumbnail: "fas fa-image",
+                likes: 89,
+                downloads: 45
+            },
+            {
+                id: 4,
+                title: "Workshop Session",
+                type: "image",
+                event: "Career Development Workshop",
+                date: "2024-03-20",
+                category: "Workshop",
+                description: "Interactive workshop session on career development",
+                thumbnail: "fas fa-image",
+                likes: 34,
+                downloads: 18
+            },
+            {
+                id: 5,
+                title: "Research Presentation",
+                type: "video",
+                event: "Research Symposium",
+                date: "2024-03-10",
+                category: "Research",
+                description: "Research presentation on innovative projects",
+                thumbnail: "fas fa-video",
+                likes: 56,
+                downloads: 29
+            },
+            {
+                id: 6,
+                title: "Sports Tournament Final",
+                type: "image",
+                event: "Sports Tournament",
+                date: "2024-03-08",
+                category: "Sports",
+                description: "Final match of the inter-departmental sports tournament",
+                thumbnail: "fas fa-image",
+                likes: 78,
+                downloads: 41
+            }
+        ];
+
+        // Initialize media gallery page
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+            loadSampleData();
+            setupEventListeners();
+            displayMedia(mediaItems);
+            updateMediaStats();
+            
+            // Setup filter event listeners
+            document.getElementById('searchMedia').addEventListener('input', filterMedia);
+            document.getElementById('mediaTypeFilter').addEventListener('change', filterMedia);
+            document.getElementById('eventFilter').addEventListener('change', filterMedia);
+            document.getElementById('yearFilter').addEventListener('change', filterMedia);
+            document.getElementById('sortMedia').addEventListener('change', filterMedia);
+            
+            // Setup view mode toggle
+            document.getElementById('gridView').addEventListener('change', function() {
+                if (this.checked) {
+                    document.getElementById('mediaGrid').classList.remove('list-view');
+                    document.getElementById('mediaGrid').classList.add('grid-view');
+                }
+            });
+            
+            document.getElementById('listView').addEventListener('change', function() {
+                if (this.checked) {
+                    document.getElementById('mediaGrid').classList.remove('grid-view');
+                    document.getElementById('mediaGrid').classList.add('list-view');
+                }
+            });
+        });
+        
+        // Display media items
+        function displayMedia(mediaToShow) {
+            const mediaGrid = document.getElementById('mediaGrid');
+            
+            if (mediaToShow.length === 0) {
+                mediaGrid.innerHTML = `
+                    <div class="col-12 text-center py-5">
+                        <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                        <h4 class="text-muted">No media found</h4>
+                        <p class="text-muted">Try adjusting your filters or search terms.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            mediaGrid.innerHTML = mediaToShow.map(media => `
+                <div class="media-item" onclick="openMediaModal(${media.id})">
+                    <div class="media-thumbnail bg-${getCategoryColor(media.category)} text-white p-4 text-center">
+                        <i class="${media.thumbnail} fa-3x mb-2"></i>
+                        <div class="media-type-badge">
+                            <span class="badge bg-dark">${media.type.toUpperCase()}</span>
+                        </div>
+                    </div>
+                    <div class="media-info p-3">
+                        <h6 class="media-title">${media.title}</h6>
+                        <p class="media-event text-muted small">${media.event}</p>
+                        <p class="media-description small">${media.description}</p>
+                        <div class="media-meta d-flex justify-content-between align-items-center">
+                            <div class="media-stats">
+                                <small class="text-muted">
+                                    <i class="fas fa-heart me-1"></i>${media.likes}
+                                    <i class="fas fa-download ms-2 me-1"></i>${media.downloads}
+                                </small>
+                            </div>
+                            <div class="media-actions">
+                                <button class="btn btn-outline-primary btn-sm" onclick="event.stopPropagation(); favoriteMedia(${media.id})">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button class="btn btn-outline-success btn-sm" onclick="event.stopPropagation(); downloadMedia(${media.id})">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // Get category color
+        function getCategoryColor(category) {
+            const colors = {
+                'Technology': 'primary',
+                'Workshop': 'success',
+                'Cultural': 'info',
+                'Research': 'warning',
+                'Sports': 'danger',
+                'Academic': 'secondary'
+            };
+            return colors[category] || 'primary';
+        }
+        
+        // Filter media
+        function filterMedia() {
+            const searchTerm = document.getElementById('searchMedia').value.toLowerCase();
+            const mediaType = document.getElementById('mediaTypeFilter').value;
+            const event = document.getElementById('eventFilter').value;
+            const year = document.getElementById('yearFilter').value;
+            const sortBy = document.getElementById('sortMedia').value;
+            
+            let filteredMedia = mediaItems;
+            
+            // Apply filters
+            if (searchTerm) {
+                filteredMedia = filteredMedia.filter(media => 
+                    media.title.toLowerCase().includes(searchTerm) ||
+                    media.description.toLowerCase().includes(searchTerm) ||
+                    media.event.toLowerCase().includes(searchTerm)
+                );
+            }
+            
+            if (mediaType !== 'all') {
+                filteredMedia = filteredMedia.filter(media => media.type === mediaType);
+            }
+            
+            if (event !== 'all') {
+                filteredMedia = filteredMedia.filter(media => media.event === event);
+            }
+            
+            if (year !== 'all') {
+                filteredMedia = filteredMedia.filter(media => media.date.startsWith(year));
+            }
+            
+            // Sort media
+            switch(sortBy) {
+                case 'newest':
+                    filteredMedia.sort((a, b) => new Date(b.date) - new Date(a.date));
+                    break;
+                case 'oldest':
+                    filteredMedia.sort((a, b) => new Date(a.date) - new Date(b.date));
+                    break;
+                case 'popular':
+                    filteredMedia.sort((a, b) => b.likes - a.likes);
+                    break;
+                case 'name':
+                    filteredMedia.sort((a, b) => a.title.localeCompare(b.title));
+                    break;
+            }
+            
+            displayMedia(filteredMedia);
+        }
+        
+        // Update media statistics
+        function updateMediaStats() {
+            const totalImages = mediaItems.filter(media => media.type === 'image').length;
+            const totalVideos = mediaItems.filter(media => media.type === 'video').length;
+            const totalEvents = [...new Set(mediaItems.map(media => media.event))].length;
+            const totalDownloads = mediaItems.reduce((sum, media) => sum + media.downloads, 0);
+            
+            document.getElementById('totalImages').textContent = totalImages;
+            document.getElementById('totalVideos').textContent = totalVideos;
+            document.getElementById('totalEvents').textContent = totalEvents;
+            document.getElementById('totalDownloads').textContent = totalDownloads;
+        }
+        
+        // Open media modal
+        function openMediaModal(mediaId) {
+            const media = mediaItems.find(m => m.id === mediaId);
+            if (!media) return;
+            
+            const modal = new bootstrap.Modal(document.getElementById('mediaModal'));
+            const modalTitle = document.getElementById('mediaModalTitle');
+            const modalContent = document.getElementById('mediaModalContent');
+            
+            modalTitle.textContent = media.title;
+            
+            if (media.type === 'image') {
+                modalContent.innerHTML = `
+                    <div class="media-preview bg-light p-5 rounded">
+                        <i class="${media.thumbnail} fa-5x text-muted mb-3"></i>
+                        <p class="text-muted">Image preview would be displayed here</p>
+                    </div>
+                `;
+            } else if (media.type === 'video') {
+                modalContent.innerHTML = `
+                    <div class="media-preview bg-light p-5 rounded">
+                        <i class="${media.thumbnail} fa-5x text-muted mb-3"></i>
+                        <p class="text-muted">Video player would be displayed here</p>
+                    </div>
+                `;
+            }
+            
+            modal.show();
+        }
+        
+        // Download media
+        function downloadMedia(mediaId) {
+            if (mediaId) {
+                const media = mediaItems.find(m => m.id === mediaId);
+                showAlert(`Downloading ${media.title}...`, 'success');
+            } else {
+                showAlert('Download started!', 'success');
+            }
+        }
+        
+        // Share media
+        function shareMedia() {
+            showAlert('Media link copied to clipboard!', 'success');
+        }
+        
+        // Favorite media
+        function favoriteMedia(mediaId) {
+            if (mediaId) {
+                const media = mediaItems.find(m => m.id === mediaId);
+                showAlert(`Added ${media.title} to favorites!`, 'success');
+            } else {
+                showAlert('Added to favorites!', 'success');
+            }
+        }
+        
+        // View event media
+        function viewEventMedia(eventName) {
+            document.getElementById('eventFilter').value = eventName;
+            filterMedia();
+        }
+        
+        // Load more media
+        function loadMoreMedia() {
+            showAlert('Loading more media...', 'info');
+        }
+    </script>
+</body>
+</html>

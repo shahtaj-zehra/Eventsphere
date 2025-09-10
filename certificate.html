@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate - EventSphere</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-calendar-alt me-2"></i>EventSphere
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="media.html">Media</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Feedback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">
+                            <i class="fas fa-sign-in-alt me-1"></i>Login/Register
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Certificate Header -->
+    <section class="certificate-header py-5 mt-5 bg-gradient-primary text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="display-4 fw-bold mb-3">
+                        <i class="fas fa-certificate me-3"></i>Certificate of Participation
+                    </h1>
+                    <p class="lead">Your achievement is now digitally verified and ready to share</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Section -->
+    <section class="certificate-section py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <!-- Certificate Preview -->
+                    <div class="certificate-preview mb-5">
+                        <div class="certificate-content">
+                            <div class="certificate-header-content text-center mb-4">
+                                <div class="certificate-logo mb-3">
+                                    <i class="fas fa-certificate fa-4x text-primary"></i>
+                                </div>
+                                <h2 class="certificate-title fw-bold">CERTIFICATE OF PARTICIPATION</h2>
+                                <div class="certificate-subtitle">This is to certify that</div>
+                            </div>
+                            
+                            <div class="certificate-body text-center mb-4">
+                                <h3 class="participant-name fw-bold" id="participantName">John Doe</h3>
+                                <div class="certificate-text">
+                                    <p class="mb-3">has successfully participated in</p>
+                                    <h4 class="event-name fw-bold" id="eventName">Tech Conference 2024</h4>
+                                    <p class="mb-3">organized by</p>
+                                    <h5 class="organizer-name" id="organizerName">Tech Department</h5>
+                                    <p class="mb-3">on</p>
+                                    <div class="event-details">
+                                        <p class="mb-1"><strong>Date:</strong> <span id="eventDate">March 15, 2024</span></p>
+                                        <p class="mb-1"><strong>Duration:</strong> <span id="eventDuration">8 hours</span></p>
+                                        <p class="mb-1"><strong>Venue:</strong> <span id="eventVenue">Convention Center</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="certificate-footer">
+                                <div class="row">
+                                    <div class="col-md-6 text-center">
+                                        <div class="signature-section">
+                                            <div class="signature-line mb-2"></div>
+                                            <p class="signature-label">Event Organizer</p>
+                                            <p class="signature-name">Dr. Sarah Johnson</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 text-center">
+                                        <div class="signature-section">
+                                            <div class="signature-line mb-2"></div>
+                                            <p class="signature-label">Date of Issue</p>
+                                            <p class="signature-name" id="issueDate">March 16, 2024</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="certificate-verification text-center mt-4">
+                                <div class="verification-code">
+                                    <small class="text-muted">Certificate ID: </small>
+                                    <strong id="certificateId">EVT-2024-001234</strong>
+                                </div>
+                                <div class="verification-link mt-2">
+                                    <small class="text-muted">Verify at: </small>
+                                    <a href="#" class="text-decoration-none">eventsphere.com/verify</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certificate Actions -->
+                    <div class="certificate-actions text-center mb-5">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <button class="btn btn-primary btn-lg w-100" onclick="downloadCertificate()">
+                                    <i class="fas fa-download me-2"></i>Download PDF
+                                </button>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-success btn-lg w-100" onclick="shareCertificate()">
+                                    <i class="fas fa-share-alt me-2"></i>Share Certificate
+                                </button>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-info btn-lg w-100" onclick="printCertificate()">
+                                    <i class="fas fa-print me-2"></i>Print Certificate
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certificate Details -->
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="card certificate-details-card">
+                                <div class="card-header">
+                                    <h5 class="mb-0">
+                                        <i class="fas fa-info-circle me-2"></i>Certificate Details
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="detail-item mb-3">
+                                                <label class="form-label fw-bold">Certificate ID:</label>
+                                                <p class="mb-0" id="detailCertificateId">EVT-2024-001234</p>
+                                            </div>
+                                            <div class="detail-item mb-3">
+                                                <label class="form-label fw-bold">Participant Name:</label>
+                                                <p class="mb-0" id="detailParticipantName">John Doe</p>
+                                            </div>
+                                            <div class="detail-item mb-3">
+                                                <label class="form-label fw-bold">Event Name:</label>
+                                                <p class="mb-0" id="detailEventName">Tech Conference 2024</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="detail-item mb-3">
+                                                <label class="form-label fw-bold">Issue Date:</label>
+                                                <p class="mb-0" id="detailIssueDate">March 16, 2024</p>
+                                            </div>
+                                            <div class="detail-item mb-3">
+                                                <label class="form-label fw-bold">Event Date:</label>
+                                                <p class="mb-0" id="detailEventDate">March 15, 2024</p>
+                                            </div>
+                                            <div class="detail-item mb-3">
+                                                <label class="form-label fw-bold">Status:</label>
+                                                <span class="badge bg-success">Verified</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card certificate-verification-card">
+                                <div class="card-header">
+                                    <h6 class="mb-0">
+                                        <i class="fas fa-shield-alt me-2"></i>Verification
+                                    </h6>
+                                </div>
+                                <div class="card-body text-center">
+                                    <div class="verification-status mb-3">
+                                        <i class="fas fa-check-circle fa-3x text-success mb-3"></i>
+                                        <h6 class="text-success">Certificate Verified</h6>
+                                        <p class="text-muted small">This certificate is authentic and verified by EventSphere</p>
+                                    </div>
+                                    <div class="verification-actions">
+                                        <button class="btn btn-outline-primary btn-sm w-100 mb-2" onclick="verifyCertificate()">
+                                            <i class="fas fa-search me-1"></i>Verify Online
+                                        </button>
+                                        <button class="btn btn-outline-secondary btn-sm w-100" onclick="reportIssue()">
+                                            <i class="fas fa-flag me-1"></i>Report Issue
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Certificates -->
+    <section class="other-certificates py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-center mb-5">Your Other Certificates</h2>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card certificate-card h-100">
+                        <div class="card-body text-center">
+                            <div class="certificate-icon bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                                <i class="fas fa-certificate fa-2x"></i>
+                            </div>
+                            <h6 class="card-title">AI Workshop</h6>
+                            <p class="text-muted small mb-3">February 28, 2024</p>
+                            <p class="card-text small">Hands-on workshop on artificial intelligence and machine learning applications.</p>
+                            <div class="d-flex gap-2">
+                                <a href="certificate.html" class="btn btn-outline-primary btn-sm flex-fill">View</a>
+                                <button class="btn btn-outline-success btn-sm" onclick="downloadCertificate()">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card certificate-card h-100">
+                        <div class="card-body text-center">
+                            <div class="certificate-icon bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                                <i class="fas fa-certificate fa-2x"></i>
+                            </div>
+                            <h6 class="card-title">Leadership Summit</h6>
+                            <p class="text-muted small mb-3">February 25, 2024</p>
+                            <p class="card-text small">Developing leadership skills and team management strategies.</p>
+                            <div class="d-flex gap-2">
+                                <a href="certificate.html" class="btn btn-outline-primary btn-sm flex-fill">View</a>
+                                <button class="btn btn-outline-success btn-sm" onclick="downloadCertificate()">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card certificate-card h-100">
+                        <div class="card-body text-center">
+                            <div class="certificate-icon bg-warning text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                                <i class="fas fa-certificate fa-2x"></i>
+                            </div>
+                            <h6 class="card-title">Digital Marketing Bootcamp</h6>
+                            <p class="text-muted small mb-3">February 20, 2024</p>
+                            <p class="card-text small">Comprehensive training on digital marketing strategies and tools.</p>
+                            <div class="d-flex gap-2">
+                                <a href="certificate.html" class="btn btn-outline-primary btn-sm flex-fill">View</a>
+                                <button class="btn btn-outline-success btn-sm" onclick="downloadCertificate()">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Statistics -->
+    <section class="certificate-stats py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stats-card">
+                        <i class="fas fa-certificate"></i>
+                        <h3 id="totalCertificates">3</h3>
+                        <p>Total Certificates</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stats-card">
+                        <i class="fas fa-clock"></i>
+                        <h3 id="totalHours">24</h3>
+                        <p>Learning Hours</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stats-card">
+                        <i class="fas fa-trophy"></i>
+                        <h3 id="achievements">5</h3>
+                        <p>Achievements</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stats-card">
+                        <i class="fas fa-star"></i>
+                        <h3 id="avgRating">4.8</h3>
+                        <p>Average Rating</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-calendar-alt me-2"></i>EventSphere</h5>
+                    <p class="text-muted">Connecting communities through meaningful events and experiences.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="events.html" class="text-muted text-decoration-none">Events</a></li>
+                        <li><a href="media.html" class="text-muted text-decoration-none">Media</a></li>
+                        <li><a href="feedback.html" class="text-muted text-decoration-none">Feedback</a></li>
+                        <li><a href="about.html" class="text-muted text-decoration-none">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                        <li><a href="faq.html" class="text-muted text-decoration-none">FAQ</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Help</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h6>Newsletter</h6>
+                    <p class="text-muted">Subscribe to get updates about upcoming events.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-muted">&copy; 2024 EventSphere. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0 text-muted">Made with <i class="fas fa-heart text-danger"></i> for the community</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Initialize certificate page
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+            loadSampleData();
+            setupEventListeners();
+            loadCertificateData();
+        });
+        
+        // Load certificate data
+        function loadCertificateData() {
+            // Get certificate data from URL parameters or use default
+            const urlParams = new URLSearchParams(window.location.search);
+            const certificateId = urlParams.get('id') || 'EVT-2024-001234';
+            
+            // Mock certificate data
+            const certificateData = {
+                id: certificateId,
+                participantName: 'John Doe',
+                eventName: 'Tech Conference 2024',
+                organizerName: 'Tech Department',
+                eventDate: 'March 15, 2024',
+                issueDate: 'March 16, 2024',
+                duration: '8 hours',
+                venue: 'Convention Center'
+            };
+            
+            // Update certificate content
+            document.getElementById('participantName').textContent = certificateData.participantName;
+            document.getElementById('eventName').textContent = certificateData.eventName;
+            document.getElementById('organizerName').textContent = certificateData.organizerName;
+            document.getElementById('eventDate').textContent = certificateData.eventDate;
+            document.getElementById('eventDuration').textContent = certificateData.duration;
+            document.getElementById('eventVenue').textContent = certificateData.venue;
+            document.getElementById('issueDate').textContent = certificateData.issueDate;
+            document.getElementById('certificateId').textContent = certificateData.id;
+            
+            // Update details section
+            document.getElementById('detailCertificateId').textContent = certificateData.id;
+            document.getElementById('detailParticipantName').textContent = certificateData.participantName;
+            document.getElementById('detailEventName').textContent = certificateData.eventName;
+            document.getElementById('detailIssueDate').textContent = certificateData.issueDate;
+            document.getElementById('detailEventDate').textContent = certificateData.eventDate;
+        }
+        
+        // Download certificate
+        function downloadCertificate() {
+            showAlert('Certificate download started!', 'success');
+            
+            // Simulate download progress
+            const downloadBtn = event.target;
+            const originalText = downloadBtn.innerHTML;
+            downloadBtn.innerHTML = '<span class="loading"></span> Downloading...';
+            downloadBtn.disabled = true;
+            
+            setTimeout(() => {
+                downloadBtn.innerHTML = originalText;
+                downloadBtn.disabled = false;
+                showAlert('Certificate downloaded successfully!', 'success');
+            }, 2000);
+        }
+        
+        // Share certificate
+        function shareCertificate() {
+            const certificateUrl = window.location.href;
+            const certificateTitle = document.getElementById('eventName').textContent;
+            const participantName = document.getElementById('participantName').textContent;
+            
+            const shareText = `I'm proud to share my certificate of participation in "${certificateTitle}"! Check it out: ${certificateUrl}`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: `Certificate - ${certificateTitle}`,
+                    text: shareText,
+                    url: certificateUrl
+                });
+            } else {
+                // Fallback: copy to clipboard
+                navigator.clipboard.writeText(shareText).then(() => {
+                    showAlert('Certificate link copied to clipboard!', 'success');
+                });
+            }
+        }
+        
+        // Print certificate
+        function printCertificate() {
+            const certificateContent = document.querySelector('.certificate-preview');
+            const printWindow = window.open('', '_blank');
+            
+            printWindow.document.write(`
+                <html>
+                    <head>
+                        <title>Certificate - ${document.getElementById('eventName').textContent}</title>
+                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+                        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+                        <style>
+                            body { margin: 0; padding: 20px; }
+                            .certificate-preview { 
+                                border: 3px solid #0d6efd; 
+                                padding: 40px; 
+                                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                                min-height: 80vh;
+                            }
+                            .certificate-title { color: #0d6efd; }
+                            .participant-name { color: #0d6efd; }
+                            .event-name { color: #198754; }
+                            .signature-line { border-bottom: 2px solid #000; width: 200px; margin: 0 auto; }
+                        </style>
+                    </head>
+                    <body>
+                        ${certificateContent.outerHTML}
+                    </body>
+                </html>
+            `);
+            
+            printWindow.document.close();
+            printWindow.print();
+        }
+        
+        // Verify certificate
+        function verifyCertificate() {
+            const certificateId = document.getElementById('certificateId').textContent;
+            showAlert(`Verifying certificate ${certificateId}...`, 'info');
+            
+            // Simulate verification
+            setTimeout(() => {
+                showAlert('Certificate verification successful! This certificate is authentic.', 'success');
+            }, 1500);
+        }
+        
+        // Report issue
+        function reportIssue() {
+            showAlert('Thank you for reporting. We will investigate this issue.', 'info');
+        }
+    </script>
+</body>
+</html>

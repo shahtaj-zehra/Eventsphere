@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - EventSphere</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-calendar-alt me-2"></i>EventSphere
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="media.html">Media</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Feedback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">
+                            <i class="fas fa-sign-in-alt me-1"></i>Login/Register
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header bg-gradient-primary text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="display-4 fw-bold mb-3">Frequently Asked Questions</h1>
+                    <p class="lead">Find answers to common questions about EventSphere</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section py-4 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        <input type="text" class="form-control" id="faqSearch" placeholder="Search FAQ...">
+                        <button class="btn btn-primary" onclick="searchFAQ()">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="faq-content py-5">
+        <div class="container">
+            <!-- General Questions -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="mb-4">
+                        <i class="fas fa-question-circle text-primary me-2"></i>General Questions
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion mb-5" id="generalFAQ">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#general1">
+                                    What is EventSphere?
+                                </button>
+                            </h2>
+                            <div id="general1" class="accordion-collapse collapse show" data-bs-parent="#generalFAQ">
+                                <div class="accordion-body">
+                                    EventSphere is a comprehensive event management platform that connects event organizers with participants. It provides tools for event creation, registration, attendance tracking, certificate generation, and community building.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general2">
+                                    Is EventSphere free to use?
+                                </button>
+                            </h2>
+                            <div id="general2" class="accordion-collapse collapse" data-bs-parent="#generalFAQ">
+                                <div class="accordion-body">
+                                    Yes, EventSphere is free for participants to discover and register for events. Some events may have registration fees set by the organizers, but the platform itself is free to use.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general3">
+                                    How do I create an account?
+                                </button>
+                            </h2>
+                            <div id="general3" class="accordion-collapse collapse" data-bs-parent="#generalFAQ">
+                                <div class="accordion-body">
+                                    To create an account, click on "Login/Register" in the navigation bar, then select the "Register" tab. Fill in your details including name, email, department, enrollment number, and password. Once registered, you can start participating in events.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general4">
+                                    What types of events are available?
+                                </button>
+                            </h2>
+                            <div id="general4" class="accordion-collapse collapse" data-bs-parent="#generalFAQ">
+                                <div class="accordion-body">
+                                    EventSphere hosts various types of events including technology conferences, workshops, cultural festivals, research symposiums, sports tournaments, academic seminars, and more. You can filter events by category, date, and location.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Registration -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="mb-4">
+                        <i class="fas fa-calendar-plus text-success me-2"></i>Event Registration
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion mb-5" id="registrationFAQ">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#reg1">
+                                    How do I register for an event?
+                                </button>
+                            </h2>
+                            <div id="reg1" class="accordion-collapse collapse show" data-bs-parent="#registrationFAQ">
+                                <div class="accordion-body">
+                                    To register for an event, browse the events page, click on the event you're interested in, and then click the "Register Now" button. You'll need to be logged in to complete the registration process.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#reg2">
+                                    Can I cancel my event registration?
+                                </button>
+                            </h2>
+                            <div id="reg2" class="accordion-collapse collapse" data-bs-parent="#registrationFAQ">
+                                <div class="accordion-body">
+                                    Yes, you can cancel your registration up to 24 hours before the event starts. Go to your dashboard, find the event in your "Upcoming Events" section, and click "Cancel Registration".
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#reg3">
+                                    What if an event is full?
+                                </button>
+                            </h2>
+                            <div id="reg3" class="accordion-collapse collapse" data-bs-parent="#registrationFAQ">
+                                <div class="accordion-body">
+                                    If an event is full, you can join the waiting list. If someone cancels their registration, you'll be automatically registered and notified. You can also check back regularly as spots may become available.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#reg4">
+                                    Do I need to pay for events?
+                                </button>
+                            </h2>
+                            <div id="reg4" class="accordion-collapse collapse" data-bs-parent="#registrationFAQ">
+                                <div class="accordion-body">
+                                    Most events on EventSphere are free, but some may have registration fees set by the organizers. The event details will clearly indicate if there's a fee and the payment method required.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificates -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="mb-4">
+                        <i class="fas fa-certificate text-warning me-2"></i>Certificates
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion mb-5" id="certificateFAQ">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cert1">
+                                    How do I get my certificate?
+                                </button>
+                            </h2>
+                            <div id="cert1" class="accordion-collapse collapse show" data-bs-parent="#certificateFAQ">
+                                <div class="accordion-body">
+                                    After completing an event, your certificate will be automatically generated and available in your dashboard. Go to the "Certificates" section and click "Download" to get your digital certificate.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cert2">
+                                    Are certificates verified?
+                                </button>
+                            </h2>
+                            <div id="cert2" class="accordion-collapse collapse" data-bs-parent="#certificateFAQ">
+                                <div class="accordion-body">
+                                    Yes, all certificates issued through EventSphere are digitally verified and include a unique certificate ID. Employers and institutions can verify the authenticity of certificates using our verification system.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cert3">
+                                    Can I share my certificates?
+                                </button>
+                            </h2>
+                            <div id="cert3" class="accordion-collapse collapse" data-bs-parent="#certificateFAQ">
+                                <div class="accordion-body">
+                                    Absolutely! You can share your certificates on social media, add them to your LinkedIn profile, or include them in your resume. Each certificate has a shareable link for easy distribution.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cert4">
+                                    What if I lose my certificate?
+                                </button>
+                            </h2>
+                            <div id="cert4" class="accordion-collapse collapse" data-bs-parent="#certificateFAQ">
+                                <div class="accordion-body">
+                                    Don't worry! All your certificates are stored securely in your dashboard. You can download them again at any time. We also keep a permanent record of all certificates issued.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Support -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="mb-4">
+                        <i class="fas fa-cog text-info me-2"></i>Technical Support
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion mb-5" id="technicalFAQ">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#tech1">
+                                    I forgot my password. How do I reset it?
+                                </button>
+                            </h2>
+                            <div id="tech1" class="accordion-collapse collapse show" data-bs-parent="#technicalFAQ">
+                                <div class="accordion-body">
+                                    On the login page, click "Forgot your password?" and enter your email address. We'll send you a reset link. If you don't receive the email, check your spam folder or contact our support team.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tech2">
+                                    The website is not loading properly. What should I do?
+                                </button>
+                            </h2>
+                            <div id="tech2" class="accordion-collapse collapse" data-bs-parent="#technicalFAQ">
+                                <div class="accordion-body">
+                                    Try refreshing the page or clearing your browser cache. If the problem persists, try using a different browser or device. You can also contact our technical support team for assistance.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tech3">
+                                    How do I update my profile information?
+                                </button>
+                            </h2>
+                            <div id="tech3" class="accordion-collapse collapse" data-bs-parent="#technicalFAQ">
+                                <div class="accordion-body">
+                                    Log into your account and go to your dashboard. Click on "Profile" in the dropdown menu to edit your personal information, contact details, and preferences.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tech4">
+                                    Can I use EventSphere on my mobile device?
+                                </button>
+                            </h2>
+                            <div id="tech4" class="accordion-collapse collapse" data-bs-parent="#technicalFAQ">
+                                <div class="accordion-body">
+                                    Yes! EventSphere is fully responsive and works on all devices including smartphones and tablets. You can access all features through your mobile browser.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Organization -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="mb-4">
+                        <i class="fas fa-user-tie text-danger me-2"></i>Event Organization
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion mb-5" id="organizationFAQ">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#org1">
+                                    How do I become an event organizer?
+                                </button>
+                            </h2>
+                            <div id="org1" class="accordion-collapse collapse show" data-bs-parent="#organizationFAQ">
+                                <div class="accordion-body">
+                                    To become an organizer, you need to apply through our platform. Create an account, then submit an organizer application with your credentials and event hosting experience. Once approved, you can start creating events.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#org2">
+                                    What tools are available for event organizers?
+                                </button>
+                            </h2>
+                            <div id="org2" class="accordion-collapse collapse" data-bs-parent="#organizationFAQ">
+                                <div class="accordion-body">
+                                    Organizers have access to event creation tools, registration management, attendance tracking, QR code generation, media upload, participant communication, and analytics dashboard.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#org3">
+                                    How do I manage event registrations?
+                                </button>
+                            </h2>
+                            <div id="org3" class="accordion-collapse collapse" data-bs-parent="#organizationFAQ">
+                                <div class="accordion-body">
+                                    In your organizer dashboard, you can view all registrations, approve or reject participants, send communications, track attendance, and generate reports. The system provides real-time updates on registration status.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#org4">
+                                    Can I reschedule or cancel my event?
+                                </button>
+                            </h2>
+                            <div id="org4" class="accordion-collapse collapse" data-bs-parent="#organizationFAQ">
+                                <div class="accordion-body">
+                                    Yes, you can reschedule or cancel your event through your organizer dashboard. All registered participants will be automatically notified of any changes via email and in-app notifications.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Support -->
+    <section class="contact-support py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="mb-4">Still Have Questions?</h2>
+                    <p class="lead mb-4">Can't find the answer you're looking for? Our support team is here to help!</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="contact.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-envelope me-2"></i>Contact Support
+                        </a>
+                        <button class="btn btn-outline-primary btn-lg" onclick="startLiveChat()">
+                            <i class="fas fa-comments me-2"></i>Live Chat
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-calendar-alt me-2"></i>EventSphere</h5>
+                    <p class="text-muted">Connecting communities through meaningful events and experiences.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="events.html" class="text-muted text-decoration-none">Events</a></li>
+                        <li><a href="media.html" class="text-muted text-decoration-none">Media</a></li>
+                        <li><a href="feedback.html" class="text-muted text-decoration-none">Feedback</a></li>
+                        <li><a href="about.html" class="text-muted text-decoration-none">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                        <li><a href="faq.html" class="text-muted text-decoration-none">FAQ</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Help</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h6>Newsletter</h6>
+                    <p class="text-muted">Subscribe to get updates about upcoming events.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-muted">&copy; 2024 EventSphere. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0 text-muted">Made with <i class="fas fa-heart text-danger"></i> for the community</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Initialize FAQ page
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+            loadSampleData();
+            setupEventListeners();
+        });
+        
+        // Search FAQ
+        function searchFAQ() {
+            const searchTerm = document.getElementById('faqSearch').value.toLowerCase();
+            const accordionItems = document.querySelectorAll('.accordion-item');
+            
+            accordionItems.forEach(item => {
+                const button = item.querySelector('.accordion-button');
+                const body = item.querySelector('.accordion-body');
+                const text = (button.textContent + ' ' + body.textContent).toLowerCase();
+                
+                if (text.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+        
+        // Start live chat
+        function startLiveChat() {
+            showAlert('Live chat would open here', 'info');
+        }
+        
+        // Setup search functionality
+        document.getElementById('faqSearch').addEventListener('input', function() {
+            if (this.value.length > 2) {
+                searchFAQ();
+            } else {
+                // Show all items if search is cleared
+                const accordionItems = document.querySelectorAll('.accordion-item');
+                accordionItems.forEach(item => {
+                    item.style.display = 'block';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

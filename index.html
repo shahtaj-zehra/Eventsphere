@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventSphere - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-calendar-alt me-2"></i>EventSphere
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="media.html">Media</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Feedback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">
+                            <i class="fas fa-sign-in-alt me-1"></i>Login/Register
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section bg-gradient-primary text-white py-5 mt-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3">Welcome to EventSphere</h1>
+                    <p class="lead mb-4">Discover, participate, and celebrate amazing events in your community. From workshops to conferences, we bring you closer to meaningful experiences.</p>
+                    <div class="d-flex gap-3">
+                        <a href="events.html" class="btn btn-light btn-lg">
+                            <i class="fas fa-calendar me-2"></i>Browse Events
+                        </a>
+                        <a href="login.html" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-user-plus me-2"></i>Join Now
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="hero-image text-center">
+                        <i class="fas fa-calendar-check display-1 opacity-75"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Announcements Banner -->
+    <section class="announcements py-3 bg-warning">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-1">
+                    <i class="fas fa-bullhorn text-dark fs-4"></i>
+                </div>
+                <div class="col-md-11">
+                    <div class="announcement-text">
+                        <strong>🎉 New Feature Alert!</strong> 
+                        <span class="ms-2">Certificate generation is now available for all completed events. Check your dashboard to download your certificates!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-center mb-5">Upcoming Events</h2>
+                </div>
+            </div>
+            <div class="row g-4">
+                <!-- Event Card 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card event-card h-100 shadow-sm">
+                        <div class="card-img-top bg-primary text-white p-4 text-center">
+                            <i class="fas fa-laptop-code fs-1"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Tech Conference 2024</h5>
+                            <p class="card-text text-muted">
+                                <i class="fas fa-calendar me-2"></i>March 15, 2024<br>
+                                <i class="fas fa-clock me-2"></i>9:00 AM - 5:00 PM<br>
+                                <i class="fas fa-map-marker-alt me-2"></i>Convention Center
+                            </p>
+                            <p class="card-text">Join us for the biggest technology conference of the year featuring industry leaders and innovative solutions.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Technology</span>
+                                <a href="event-detail.html" class="btn btn-outline-primary btn-sm">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card event-card h-100 shadow-sm">
+                        <div class="card-img-top bg-success text-white p-4 text-center">
+                            <i class="fas fa-graduation-cap fs-1"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Career Development Workshop</h5>
+                            <p class="card-text text-muted">
+                                <i class="fas fa-calendar me-2"></i>March 20, 2024<br>
+                                <i class="fas fa-clock me-2"></i>2:00 PM - 4:00 PM<br>
+                                <i class="fas fa-map-marker-alt me-2"></i>Library Auditorium
+                            </p>
+                            <p class="card-text">Learn essential skills for career advancement and networking opportunities.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success">Workshop</span>
+                                <a href="event-detail.html" class="btn btn-outline-primary btn-sm">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card event-card h-100 shadow-sm">
+                        <div class="card-img-top bg-info text-white p-4 text-center">
+                            <i class="fas fa-users fs-1"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Cultural Festival</h5>
+                            <p class="card-text text-muted">
+                                <i class="fas fa-calendar me-2"></i>March 25, 2024<br>
+                                <i class="fas fa-clock me-2"></i>6:00 PM - 10:00 PM<br>
+                                <i class="fas fa-map-marker-alt me-2"></i>Main Campus Ground
+                            </p>
+                            <p class="card-text">Celebrate diversity with music, dance, and cultural performances from around the world.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-info">Cultural</span>
+                                <a href="event-detail.html" class="btn btn-outline-primary btn-sm">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ongoing Events -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h2 class="text-center mb-5">Ongoing Events</h2>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card event-card h-100 shadow-sm border-warning">
+                        <div class="card-header bg-warning text-dark">
+                            <h5 class="mb-0">
+                                <i class="fas fa-play-circle me-2"></i>Currently Running
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Research Symposium</h5>
+                            <p class="card-text text-muted">
+                                <i class="fas fa-calendar me-2"></i>March 10-12, 2024<br>
+                                <i class="fas fa-clock me-2"></i>9:00 AM - 6:00 PM<br>
+                                <i class="fas fa-map-marker-alt me-2"></i>Research Center
+                            </p>
+                            <p class="card-text">Annual research symposium showcasing innovative projects and discoveries.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-warning text-dark">Research</span>
+                                <a href="event-detail.html" class="btn btn-warning btn-sm">Join Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card event-card h-100 shadow-sm border-warning">
+                        <div class="card-header bg-warning text-dark">
+                            <h5 class="mb-0">
+                                <i class="fas fa-play-circle me-2"></i>Currently Running
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Sports Tournament</h5>
+                            <p class="card-text text-muted">
+                                <i class="fas fa-calendar me-2"></i>March 8-15, 2024<br>
+                                <i class="fas fa-clock me-2"></i>8:00 AM - 8:00 PM<br>
+                                <i class="fas fa-map-marker-alt me-2"></i>Sports Complex
+                            </p>
+                            <p class="card-text">Inter-departmental sports tournament with multiple events and competitions.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-warning text-dark">Sports</span>
+                                <a href="event-detail.html" class="btn btn-warning btn-sm">Join Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Past Events -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h2 class="text-center mb-5">Recent Past Events</h2>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card event-card h-100 shadow-sm opacity-75">
+                        <div class="card-img-top bg-secondary text-white p-4 text-center">
+                            <i class="fas fa-check-circle fs-1"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">AI Workshop</h5>
+                            <p class="card-text text-muted">
+                                <i class="fas fa-calendar me-2"></i>February 28, 2024<br>
+                                <i class="fas fa-clock me-2"></i>10:00 AM - 3:00 PM<br>
+                                <i class="fas fa-map-marker-alt me-2"></i>Computer Lab
+                            </p>
+                            <p class="card-text">Hands-on workshop on artificial intelligence and machine learning applications.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-secondary">Completed</span>
+                                <a href="certificate.html" class="btn btn-outline-secondary btn-sm">View Certificate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card event-card h-100 shadow-sm opacity-75">
+                        <div class="card-img-top bg-secondary text-white p-4 text-center">
+                            <i class="fas fa-check-circle fs-1"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Leadership Summit</h5>
+                            <p class="card-text text-muted">
+                                <i class="fas fa-calendar me-2"></i>February 25, 2024<br>
+                                <i class="fas fa-clock me-2"></i>9:00 AM - 4:00 PM<br>
+                                <i class="fas fa-map-marker-alt me-2"></i>Conference Hall
+                            </p>
+                            <p class="card-text">Developing leadership skills and team management strategies.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-secondary">Completed</span>
+                                <a href="certificate.html" class="btn btn-outline-secondary btn-sm">View Certificate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card event-card h-100 shadow-sm opacity-75">
+                        <div class="card-img-top bg-secondary text-white p-4 text-center">
+                            <i class="fas fa-check-circle fs-1"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Art Exhibition</h5>
+                            <p class="card-text text-muted">
+                                <i class="fas fa-calendar me-2"></i>February 20, 2024<br>
+                                <i class="fas fa-clock me-2"></i>11:00 AM - 7:00 PM<br>
+                                <i class="fas fa-map-marker-alt me-2"></i>Art Gallery
+                            </p>
+                            <p class="card-text">Student artwork showcase featuring paintings, sculptures, and digital art.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-secondary">Completed</span>
+                                <a href="media.html" class="btn btn-outline-secondary btn-sm">View Gallery</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View All Events Button -->
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <a href="events.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-calendar-alt me-2"></i>View All Events
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-calendar-alt me-2"></i>EventSphere</h5>
+                    <p class="text-muted">Connecting communities through meaningful events and experiences.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                 <div class="col-lg-2 col-md-6 mb-4">
+                     <h6 class="text-white">Quick Links</h6>
+                     <ul class="list-unstyled">
+                         <li><a href="events.html" class="text-white text-decoration-none">Events</a></li>
+                         <li><a href="media.html" class="text-white text-decoration-none">Media</a></li>
+                         <li><a href="feedback.html" class="text-white text-decoration-none">Feedback</a></li>
+                         <li><a href="about.html" class="text-white text-decoration-none">About</a></li>
+                     </ul>
+                 </div>
+                 <div class="col-lg-2 col-md-6 mb-4">
+                     <h6 class="text-white">Support</h6>
+                     <ul class="list-unstyled">
+                         <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+                         <li><a href="faq.html" class="text-white text-decoration-none">FAQ</a></li>
+                         <li><a href="#" class="text-white text-decoration-none">Help</a></li>
+                         <li><a href="#" class="text-white text-decoration-none">Privacy</a></li>
+                     </ul>
+                 </div>
+                <div class="col-lg-4 mb-4">
+                    <h6 class="text-white">Newsletter</h6>
+                    <p class="text-white">Subscribe to get updates about upcoming events.</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Enter your email">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                 <div class="col-md-6">
+                     <p class="mb-0 text-white">&copy; 2024 EventSphere. All rights reserved.</p>
+                 </div>
+                 <div class="col-md-6 text-md-end">
+                     <p class="mb-0 text-white">Made with <i class="fas fa-heart text-danger"></i> for the community</p>
+                 </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
